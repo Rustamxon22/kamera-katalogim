@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: kamera-katalogim
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: KATALOG_PIN
+        sync: false
+      - key: SESSION_SECRET
+        sync: false

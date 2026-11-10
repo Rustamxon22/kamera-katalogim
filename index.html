@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101828">
+<title>Kamera katalogim</title>
+<style>
+:root{--bg:#f3f6fb;--ink:#101828;--muted:#667085;--line:#e4e9f1;--navy:#101828;--blue:#315bea;--blue2:#2449c7;--red:#b42318;--green:#067647;--white:#fff;--shadow:0 10px 28px rgba(16,24,40,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #b7c6ff;outline-offset:2px}
+.top{background:var(--navy);color:#fff;padding:16px max(18px,calc((100vw - 1280px)/2));display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,#6687ff,#263e9e);display:grid;place-items:center;font-size:23px}.brand strong{display:block;font-size:16px;letter-spacing:.2px}.brand small{display:block;color:#b8c4d8;font-size:12px;margin-top:3px}.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.btn{border:1px solid transparent;border-radius:10px;padding:10px 14px;font-weight:650;background:#fff;color:#1e293b;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:.15s}.btn:hover{transform:translateY(-1px)}.btn.primary{background:var(--blue);color:#fff}.btn.primary:hover{background:var(--blue2)}.btn.dark{background:#263449;color:#fff;border-color:#3b4c64}.btn.outline{border-color:#cbd5e1}.btn.danger{background:#fff5f4;color:var(--red);border-color:#fecdca}.btn.small{padding:7px 9px;font-size:12px;border-radius:8px}.btn svg{width:16px;height:16px}
+main{max-width:1280px;margin:0 auto;padding:30px 20px 55px}.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:22px}.eyebrow{color:var(--blue);font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 8px}h1{font-size:clamp(27px,4vw,39px);line-height:1.12;letter-spacing:-1px;margin:0}.desc{color:var(--muted);font-size:14px;line-height:1.55;margin:10px 0 0}.sync-pill{background:#e9f7ef;color:#067647;border-radius:10px;padding:10px 13px;font-size:12px;font-weight:700;white-space:nowrap}.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:25px 0}.metric{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px 20px;box-shadow:var(--shadow)}.metric span{font-size:12px;color:var(--muted)}.metric strong{display:block;font-size:27px;letter-spacing:-.6px;margin-top:7px}.toolbar{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:18px 0 21px}.search{position:relative;flex:1;min-width:230px}.search input{width:100%;border:1px solid var(--line);border-radius:9px;padding:11px 13px 11px 38px;background:#fbfcff}.search svg{position:absolute;left:12px;top:12px;width:17px;height:17px;color:#98a2b3}.toolbar select{min-height:42px;border:1px solid var(--line);border-radius:9px;padding:10px;background:#fff;color:#344054}.sectionline{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 13px}.sectionline h2{font-size:16px;margin:0}.sectionline span{font-size:12px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.camera{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}.pic{height:190px;background:linear-gradient(145deg,#edf2fa,#dfe7f3);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}.pic img{width:100%;height:100%;object-fit:contain;padding:12px}.pic .placeholder{font-size:54px;color:#9aa8bb}.cat{position:absolute;left:11px;top:11px;background:#fff;border-radius:7px;padding:5px 8px;font-size:10px;font-weight:800;box-shadow:0 2px 8px #0001}.body{padding:15px;display:flex;flex-direction:column;flex:1}.brandtext{font-size:10px;font-weight:850;color:var(--blue);letter-spacing:.9px;text-transform:uppercase}.cam-title{font-size:15px;font-weight:800;line-height:1.35;margin:7px 0;overflow-wrap:anywhere}.notes{font-size:12px;line-height:1.5;color:var(--muted);white-space:pre-wrap;overflow-wrap:anywhere;min-height:34px;margin:0}.price{font-size:21px;font-weight:850;letter-spacing:-.5px;margin:14px 0}.price small{font-size:12px;color:#667085;font-weight:600}.actions{display:flex;gap:7px;margin-top:auto}.actions .btn{flex:1}.empty{background:#fff;border:1px dashed #cbd5e1;border-radius:16px;padding:55px 20px;text-align:center;color:#667085}.empty .emoji{font-size:43px}.empty h3{color:#1d2939;margin:10px 0 5px}.empty p{font-size:13px;line-height:1.5;margin:0 0 17px}.footer{text-align:center;color:#98a2b3;font-size:11px;margin-top:28px}
+.login-wrap{min-height:calc(100vh - 76px);display:grid;place-items:center;padding:25px}.login-card{background:#fff;width:min(440px,100%);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 20px 60px #10182814}.login-icon{width:54px;height:54px;border-radius:16px;background:#edf2ff;display:grid;place-items:center;font-size:27px}.login-card h1{font-size:25px;margin:17px 0 8px}.login-card p{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 20px}.field{margin-bottom:14px}.field label{display:block;font-size:12px;font-weight:750;margin-bottom:6px}.field input,.field select,.field textarea{width:100%;border:1px solid #cbd5e1;border-radius:9px;padding:11px 12px;background:#fff;color:var(--ink);min-height:43px}.field textarea{min-height:80px;resize:vertical}.login-card .btn{width:100%;min-height:44px}.hint{font-size:11px;color:#98a2b3;margin-top:14px;line-height:1.5}.config-warning{padding:11px 13px;background:#fff4e5;color:#9a3412;border-radius:9px;font-size:12px;line-height:1.5;margin-bottom:14px;display:none}.status{font-size:12px;line-height:1.5;margin-top:12px;color:var(--red);min-height:18px}.notice{padding:11px 14px;border-radius:10px;background:#fff4e5;color:#9a3412;font-size:12px;line-height:1.5;margin:14px 0;display:none}.notice.show{display:block}
+.layer{position:fixed;inset:0;background:#071426b8;z-index:20;display:none;align-items:flex-start;justify-content:center;padding:18px;overflow:auto}.layer.open{display:flex}.dialog{background:#fff;border-radius:17px;width:min(590px,100%);margin:3vh auto;box-shadow:0 30px 90px #0004}.dialog-head{display:flex;align-items:center;justify-content:space-between;padding:19px 22px;border-bottom:1px solid var(--line)}.dialog-head h3{font-size:18px;margin:0}.close{border:0;background:#eef2f6;border-radius:8px;font-size:21px;padding:4px 11px}.dialog-body{padding:21px 22px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}.full{grid-column:1/-1}.preview{height:145px;border-radius:10px;background:#f0f3f9;display:grid;place-items:center;overflow:hidden;color:#98a2b3;font-size:12px;margin-bottom:9px}.preview img{width:100%;height:100%;object-fit:contain}.upload input{width:100%;font-size:12px}.dialog-foot{display:flex;justify-content:flex-end;gap:8px;padding:16px 22px;border-top:1px solid var(--line)}.form-error{color:var(--red);font-size:12px;margin-top:9px;display:none}.hidden{display:none!important}.busy{opacity:.65;pointer-events:none}
+@media(max-width:1050px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:760px){.top{padding:13px 14px}.top-actions .btn{padding:8px 10px;font-size:11px}.intro{align-items:flex-start;flex-direction:column}.metrics{gap:8px}.metric{padding:13px}.metric strong{font-size:23px}.metric span{font-size:10px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}main{padding:23px 13px 40px}.pic{height:165px}.body{padding:12px}.cam-title{font-size:13px}.price{font-size:18px}.search{min-width:100%}.toolbar select{flex:1}.sync-pill{white-space:normal}.grid2{grid-template-columns:1fr}.full{grid-column:auto}}@media(max-width:430px){.cards{grid-template-columns:1fr}.pic{height:220px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.metric:last-child{grid-column:1/-1}.brand strong{font-size:14px}.top-actions{width:100%}.top-actions .btn{flex:1}.layer{padding:9px}.dialog-head,.dialog-body,.dialog-foot{padding:16px}}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="brand"><div class="logo">📷</div><div><strong>KAMERA KATALOGIM</strong><small>Shaxsiy bulutli kamera bazasi</small></div></div>
+ <div class="top-actions hidden" id="topActions">
+  <button class="btn dark" id="exportBtn">⬇ Zaxira</button>
+  <button class="btn dark" id="importBtn">⬆ Eski bazani yuklash</button>
+  <button class="btn primary" id="addTop">＋ Kamera qo‘shish</button>
+  <button class="btn dark" id="logoutBtn">Chiqish</button>
+ </div>
+</header>
+<section id="loginView" class="login-wrap">
+ <div class="login-card">
+  <div class="login-icon">🔐</div>
+  <h1>Shaxsiy katalogga kirish</h1>
+  <p>Faqat o‘zingiz biladigan 4 xonali PIN-kodni kiriting. Gmail, email yoki Google hisobi kerak emas.</p>
+  <form id="loginForm">
+   <div class="field"><label for="pin">Maxfiy PIN-kod</label><input id="pin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="current-password" placeholder="••••" required></div>
+   <button class="btn primary" id="loginBtn" type="submit">Kirish</button>
+  </form>
+  <div id="loginStatus" class="status" aria-live="polite"></div>
+  <div class="hint">Xavfsizlik uchun 5 marta xato PIN kiritilsa, kirish 15 daqiqaga vaqtincha bloklanadi.</div>
+ </div>
+</section>
+<main id="appView" class="hidden">
+ <div class="intro"><div><p class="eyebrow">Faqat o‘zim foydalanaman</p><h1>Barcha kameralar bir joyda.</h1><p class="desc">Kamera rasmi, modeli, xususiyatlari va narxi. Telefon yoki kompyuterda o‘zgartirsang, boshqa qurilmada ham yangilanadi.</p></div><div class="sync-pill" id="syncStatus">● Bulut bilan bog‘langan</div></div>
+ <div id="notice" class="notice"></div>
+ <div class="metrics"><div class="metric"><span>Jami kameralar</span><strong id="total">0</strong></div><div class="metric"><span>Brendlar soni</span><strong id="brands">0</strong></div><div class="metric"><span>Kamera turlari</span><strong id="types">0</strong></div></div>
+ <div class="toolbar">
+  <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="search" placeholder="Model yoki brend bo‘yicha qidirish..."></div>
+  <select id="categoryFilter"><option value="">Barcha turlar</option><option>IP kamera</option><option>Wi-Fi kamera</option><option>4G kamera</option><option>Quyosh panelli</option><option>Analog kamera</option><option>Registrator</option><option>Aksessuar</option><option>Boshqa</option></select>
+  <select id="sort"><option value="new">Oxirgi qo‘shilgan</option><option value="name">Nomi bo‘yicha</option><option value="cheap">Arzonidan</option><option value="expensive">Qimmatidan</option></select>
+ </div>
+ <div class="sectionline"><h2>Kameralar ro‘yxati</h2><span id="showing">0 ta kamera</span></div>
+ <div id="cards" class="cards"></div>
+ <div id="empty" class="empty hidden"><div class="emoji">📷</div><h3>Hozircha kamera qo‘shilmagan</h3><p>Birinchi kamerani rasmi, modeli va narxi bilan katalogga kiriting.</p><button class="btn primary" id="addEmpty">＋ Birinchi kamerani qo‘shish</button></div>
+ <div class="footer">Shaxsiy katalog • PIN-kod bilan himoyalangan bulutli baza</div>
+</main>
+<input id="importFile" type="file" accept="application/json,.json" class="hidden">
+<div class="layer" id="modal">
+ <div class="dialog">
+  <div class="dialog-head"><h3 id="dialogTitle">Yangi kamera qo‘shish</h3><button class="close" id="closeModal" type="button">×</button></div>
+  <form id="cameraForm">
+   <div class="dialog-body">
+    <div class="grid2">
+     <div class="field full"><label for="camName">Kamera modeli *</label><input id="camName" maxlength="140" required placeholder="Masalan: DS-2CFSP8-D/4G"></div>
+     <div class="field"><label for="camBrand">Brend</label><input id="camBrand" maxlength="60" placeholder="Hikvision, XRvision..."></div>
+     <div class="field"><label for="camCategory">Turi</label><select id="camCategory"><option>IP kamera</option><option>Wi-Fi kamera</option><option>4G kamera</option><option>Quyosh panelli</option><option>Analog kamera</option><option>Registrator</option><option>Aksessuar</option><option selected>Boshqa</option></select></div>
+     <div class="field"><label for="camPrice">Narxi *</label><input id="camPrice" type="number" min="0" step="0.01" required placeholder="650000"></div>
+     <div class="field"><label for="camCurrency">Valyuta</label><select id="camCurrency"><option value="UZS">So‘m (UZS)</option><option value="USD">Dollar (USD)</option></select></div>
+     <div class="field full"><label for="camNotes">Xususiyatlari / izoh</label><textarea id="camNotes" maxlength="700" placeholder="Masalan: 8 MP, 4G SIM, quyosh paneli, 10x zoom..."></textarea></div>
+     <div class="field full"><label>Kamera rasmi</label><div class="preview" id="preview">Rasm tanlanmagan</div><div class="upload"><input id="camPhoto" type="file" accept="image/jpeg,image/png,image/webp"></div><div class="hint">Rasm avtomatik kichraytiriladi va yopiq bulutli xotiraga yuklanadi.</div></div>
+    </div>
+    <div class="form-error" id="formError"></div>
+   </div>
+   <div class="dialog-foot"><button class="btn outline" id="cancelModal" type="button">Bekor qilish</button><button class="btn primary" id="saveBtn" type="submit">Saqlash</button></div>
+  </form>
+ </div>
+</div>
+<script>
+(() => {
+'use strict';
+const $ = s => document.querySelector(s);
+let user = null, products = [], editingId = null, currentImageFile = null, oldImagePath = null, pollTimer = null;
+function status(el,msg,isError=true){el.textContent=msg;el.style.color=isError?'#b42318':'#067647'}
+function notice(msg){$('#notice').textContent=msg;$('#notice').classList.add('show');setTimeout(()=>$('#notice').classList.remove('show'),6500)}
+function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function money(p){const n=new Intl.NumberFormat('uz-UZ',{maximumFractionDigits:p.currency==='USD'?2:0}).format(Number(p.price)||0);return p.currency==='USD'?'$ '+n:n+' so‘m'}
+function showLogin(){user=null;products=[];if(pollTimer){clearInterval(pollTimer);pollTimer=null}$('#appView').classList.add('hidden');$('#topActions').classList.add('hidden');$('#loginView').classList.remove('hidden')}
+function showApp(){$('#loginView').classList.add('hidden');$('#appView').classList.remove('hidden');$('#topActions').classList.remove('hidden')}
+function setBusy(on){$('#loginBtn').disabled=on;$('#loginBtn').textContent=on?'Tekshirilmoqda...':'Kirish'}
+async function api(path,options={}){
+ const opts={...options,credentials:'same-origin',headers:{...(options.headers||{})}};
+ if(options.body && !(options.body instanceof FormData) && typeof options.body!=='string'){opts.body=JSON.stringify(options.body);opts.headers['Content-Type']='application/json'}
+ const res=await fetch(path,opts);
+ let data={};try{data=await res.json()}catch{}
+ if(res.status===401){showLogin();throw new Error('Sessiya tugadi. PIN-kod bilan qayta kiring.')}
+ if(!res.ok)throw new Error(data.detail||data.error||('Server xatosi: '+res.status));
+ return data;
+}
+async function signIn(pin){await api('/api/login',{method:'POST',body:{pin}});user=true;await afterLogin()}
+async function afterLogin(){showApp();status($('#loginStatus'),'');await loadCameras();if(pollTimer)clearInterval(pollTimer);pollTimer=setInterval(()=>{if(user&&!document.hidden)loadCameras().catch(()=>{})},15000)}
+async function signOut(){try{await api('/api/logout',{method:'POST'})}catch{}showLogin();$('#pin').value='';status($('#loginStatus'),'Katalogdan chiqdingiz.',false)}
+async function loadCameras(){
+ $('#syncStatus').textContent='● Ma’lumotlar yangilanmoqda...';
+ try{const data=await api('/api/cameras');products=data.cameras||[];render();$('#syncStatus').textContent='● Bulut bilan sinxronlangan'}
+ catch(e){$('#syncStatus').textContent='● Sinxronlashda xato';notice('Katalogni yuklab bo‘lmadi: '+e.message);throw e}
+}
+function render(){
+ const q=$('#search').value.trim().toLocaleLowerCase('uz-UZ'),cat=$('#categoryFilter').value,sort=$('#sort').value;
+ let data=products.filter(p=>(!cat||p.category===cat)&&[p.name,p.brand,p.notes,p.category].join(' ').toLocaleLowerCase('uz-UZ').includes(q));
+ data.sort((a,b)=>sort==='name'?a.name.localeCompare(b.name):sort==='cheap'?Number(a.price)-Number(b.price):sort==='expensive'?Number(b.price)-Number(a.price):new Date(b.updated_at)-new Date(a.updated_at));
+ $('#total').textContent=products.length;$('#brands').textContent=new Set(products.map(p=>(p.brand||'').trim().toLowerCase()).filter(Boolean)).size;$('#types').textContent=new Set(products.map(p=>p.category).filter(Boolean)).size;$('#showing').textContent=data.length+' ta natija';
+ $('#cards').innerHTML=data.map(p=>`<article class="camera"><div class="pic">${p.image_url?`<img src="${escapeHtml(p.image_url)}" alt="${escapeHtml(p.name)} rasmi" loading="lazy">`:'<div class="placeholder">📷</div>'}<span class="cat">${escapeHtml(p.category||'Boshqa')}</span></div><div class="body"><div class="brandtext">${escapeHtml(p.brand||'KAMERA')}</div><div class="cam-title">${escapeHtml(p.name)}</div><p class="notes">${escapeHtml(p.notes||'')}</p><div class="price">${money(p)}</div><div class="actions"><button class="btn outline small" data-action="edit" data-id="${escapeHtml(p.id)}">✎ Tahrirlash</button><button class="btn danger small" data-action="delete" data-id="${escapeHtml(p.id)}">🗑 O‘chirish</button></div></div></article>`).join('');
+ $('#empty').classList.toggle('hidden',data.length!==0);
+ if(data.length===0){$('#empty h3').textContent=products.length?'Hech narsa topilmadi':'Hozircha kamera qo‘shilmagan';$('#empty p').textContent=products.length?'Qidiruv yoki filtrni o‘zgartiring.':'Birinchi kamerani rasmi va narxi bilan katalogga kiriting.';$('#addEmpty').classList.toggle('hidden',products.length>0)}
+}
+function openModal(p=null){editingId=p?.id||null;oldImagePath=p?.image_path||null;currentImageFile=null;$('#cameraForm').reset();$('#camCurrency').value=p?.currency||'UZS';$('#camCategory').value=p?.category||'Boshqa';$('#camName').value=p?.name||'';$('#camBrand').value=p?.brand||'';$('#camPrice').value=p?.price??'';$('#camNotes').value=p?.notes||'';$('#dialogTitle').textContent=p?'Kamerani tahrirlash':'Yangi kamera qo‘shish';$('#formError').style.display='none';$('#preview').innerHTML=p?.image_url?`<img src="${escapeHtml(p.image_url)}" alt="Tanlangan rasm">`:'Rasm tanlanmagan';$('#camPhoto').value='';$('#modal').classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){$('#modal').classList.remove('open');document.body.style.overflow='';editingId=null;currentImageFile=null}
+function fileToJpeg(file){return new Promise((resolve,reject)=>{if(!file||!file.type.startsWith('image/'))return reject(Error('Rasm faylini tanlang.'));const url=URL.createObjectURL(file);const img=new Image();img.onload=()=>{try{const max=1500,ratio=Math.min(1,max/Math.max(img.width,img.height));const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*ratio));canvas.height=Math.max(1,Math.round(img.height*ratio));const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0,canvas.width,canvas.height);canvas.toBlob(blob=>{URL.revokeObjectURL(url);blob?resolve(blob):reject(Error('Rasmni tayyorlab bo‘lmadi.'))},'image/jpeg',.84)}catch(e){URL.revokeObjectURL(url);reject(e)}};img.onerror=()=>{URL.revokeObjectURL(url);reject(Error('Rasm ochilmadi.'))};img.src=url})}
+function showPreviewFile(file){const url=URL.createObjectURL(file);$('#preview').innerHTML=`<img src="${url}" alt="Rasm ko‘rinishi">`}
+async function uploadImage(blob){const fd=new FormData();fd.append('file',blob,'camera.jpg');const out=await api('/api/images',{method:'POST',body:fd});return out.path}
+async function saveCamera(e){
+ e.preventDefault();const name=$('#camName').value.trim(),price=Number($('#camPrice').value);
+ if(!name||!Number.isFinite(price)||price<0){$('#formError').textContent='Model nomi va to‘g‘ri narxni kiriting.';$('#formError').style.display='block';return}
+ const save=$('#saveBtn');save.disabled=true;save.textContent='Saqlanmoqda...';let uploadedPath=null;
+ try{
+  let imagePath=oldImagePath;
+  if(currentImageFile){const blob=await fileToJpeg(currentImageFile);uploadedPath=await uploadImage(blob);imagePath=uploadedPath}
+  const payload={name,brand:$('#camBrand').value.trim(),category:$('#camCategory').value,price,currency:$('#camCurrency').value,notes:$('#camNotes').value.trim(),image_path:imagePath};
+  if(editingId)await api('/api/cameras/'+encodeURIComponent(editingId),{method:'PATCH',body:payload});
+  else await api('/api/cameras',{method:'POST',body:payload});
+  closeModal();await loadCameras();
+ }catch(err){if(uploadedPath)api('/api/images?path='+encodeURIComponent(uploadedPath),{method:'DELETE'}).catch(()=>{});$('#formError').textContent='Saqlashda xato: '+(err.message||'Noma’lum xato');$('#formError').style.display='block'}
+ finally{save.disabled=false;save.textContent='Saqlash'}
+}
+async function deleteCamera(id){const p=products.find(x=>x.id===id);if(!p||!confirm('“'+p.name+'” kamerasi katalogdan o‘chirilsinmi?'))return;try{await api('/api/cameras/'+encodeURIComponent(id),{method:'DELETE'});await loadCameras()}catch(err){alert('O‘chirishda xato: '+err.message)}}
+function blobToDataUrl(blob){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(blob)})}
+async function exportBackup(){
+ try{const out=[];for(const p of products){let image='';if(p.image_url){const response=await fetch(p.image_url);if(response.ok)image=await blobToDataUrl(await response.blob())}out.push({id:p.id,name:p.name,brand:p.brand,category:p.category,price:Number(p.price),currency:p.currency,notes:p.notes,image,createdAt:Date.parse(p.created_at)||Date.now(),updatedAt:Date.parse(p.updated_at)||Date.now()})}
+ const payload={app:'kamera-katalogim',version:2,exportedAt:new Date().toISOString(),products:out};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kamera_katalogim_zaxira_'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(a.href)
+ }catch(e){alert('Zaxira olishda xato: '+e.message)}
+}
+async function importBackup(file){
+ if(!file)return;
+ try{if(file.size>100*1024*1024)throw Error('Zaxira fayli 100 MB dan katta.');const data=JSON.parse(await file.text());if(data.app!=='kamera-katalogim'||!Array.isArray(data.products))throw Error('Bu kamera katalogi zaxira fayli emas.');if(!confirm(data.products.length+' ta kamerani bulutli katalogga qo‘shasizmi? Mavjud kameralar o‘chirilmaydi.'))return;
+ let count=0;for(const p of data.products){if(!p||typeof p.name!=='string'||!Number.isFinite(Number(p.price)))continue;let imagePath=null;if(typeof p.image==='string'&&p.image.startsWith('data:image/')){const blob=await(await fetch(p.image)).blob();imagePath=await uploadImage(await fileToJpeg(blob))}
+ await api('/api/cameras',{method:'POST',body:{name:p.name.slice(0,140),brand:String(p.brand||'').slice(0,60),category:String(p.category||'Boshqa').slice(0,60),price:Number(p.price),currency:p.currency==='USD'?'USD':'UZS',notes:String(p.notes||'').slice(0,700),image_path:imagePath}});count++}
+ await loadCameras();alert(count+' ta kamera bulutga yuklandi.')
+ }catch(e){alert('Import xatosi: '+e.message)}finally{$('#importFile').value=''}
+}
+$('#loginForm').addEventListener('submit',async e=>{e.preventDefault();const pin=$('#pin').value.trim();status($('#loginStatus'),'');if(!/^\d{4}$/.test(pin)){status($('#loginStatus'),'PIN-kod 4 ta raqamdan iborat bo‘lishi kerak.');return}setBusy(true);try{await signIn(pin);$('#pin').value=''}catch(err){status($('#loginStatus'),err.message||'PIN-kod noto‘g‘ri.')}finally{setBusy(false)}});
+$('#logoutBtn').addEventListener('click',signOut);$('#addTop').addEventListener('click',()=>openModal());$('#addEmpty').addEventListener('click',()=>openModal());$('#closeModal').addEventListener('click',closeModal);$('#cancelModal').addEventListener('click',closeModal);$('#modal').addEventListener('click',e=>{if(e.target===$('#modal'))closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});$('#cameraForm').addEventListener('submit',saveCamera);
+$('#camPhoto').addEventListener('change',e=>{const f=e.target.files?.[0];if(f){currentImageFile=f;showPreviewFile(f)}});$('#cards').addEventListener('click',e=>{const b=e.target.closest('button[data-action]');if(!b)return;const p=products.find(x=>x.id===b.dataset.id);if(!p)return;if(b.dataset.action==='edit')openModal(p);if(b.dataset.action==='delete')deleteCamera(p.id)});
+for(const id of ['search','categoryFilter','sort'])$('#'+id).addEventListener(id==='search'?'input':'change',render);
+$('#exportBtn').addEventListener('click',exportBackup);$('#importBtn').addEventListener('click',()=>$('#importFile').click());$('#importFile').addEventListener('change',e=>importBackup(e.target.files?.[0]));
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&user)loadCameras().catch(()=>{})});
+(async()=>{try{const me=await api('/api/me');if(me.authenticated){user=true;await afterLogin()}else showLogin()}catch{showLogin()}})();
+})();
+</script>
+
+</body>
+</html>
